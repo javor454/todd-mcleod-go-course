@@ -1,0 +1,13 @@
+- inicializace zavislosti pro projekt test
+  - `go mod init test`
+- build a spusteni
+  - `go run main.go`
+- vypsani env vars
+  - `go env`
+- vypsani specifickych promennych GOARCH a GOOS
+  - `go env GOARCH GOOS`
+- build pro systemy
+  - `GOOS=darwin go build` -- build mac
+  - `GOOS=linux go build`
+  - `GOOS=windows go build`
+
