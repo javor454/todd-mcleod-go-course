@@ -8,10 +8,12 @@ func main() {
 	snippets.Scope()
 	snippets.Deps()
 
+	excercises.Ex01()
+	excercises.Ex02()
+	excercises.Ex03()
 	excercises.Ex04()
 	excercises.Ex05()
-	excercises.Ex06()
-	excercises.Ex07()
 
-	// TODO: 10 - Housekeeping
+	snippets.ControlFlow()
+	snippets.DataStructures()
 }

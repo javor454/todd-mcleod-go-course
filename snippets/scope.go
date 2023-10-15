@@ -10,4 +10,11 @@ func Scope() {
 
 	x := 33
 	fmt.Println(x)
+
+	{ // umele vytvoreny scope
+		y := 11
+		fmt.Println(y)
+	}
+
+	// fmt.Println(y) // error
 }
