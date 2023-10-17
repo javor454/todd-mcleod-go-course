@@ -126,6 +126,9 @@ func metody() {
 	s := "kamos"
 	bs := []byte(s)
 	sbs := string(bs)
+
+	fmt.Println(sum(13))
+
 	fmt.Printf("%v %T %v %T %v %T\n", s, s, bs, bs, sbs, sbs)
 }
 
@@ -223,4 +226,10 @@ func factorialLoop(i int) int {
 		i--
 	}
 	return total
+}
+
+// named return
+func sum(i int) (total int) {
+	total = i
+	return
 }

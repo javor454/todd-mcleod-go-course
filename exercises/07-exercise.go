@@ -1,4 +1,4 @@
-package excercises
+package exercises
 
 import (
 	"bytes"
@@ -8,17 +8,17 @@ import (
 	"os"
 )
 
-type person struct {
+type person1 struct {
 	first string
 }
 
-func (p person) writeOut(w io.Writer) error {
+func (p person1) writeOut(w io.Writer) error {
 	_, err := w.Write([]byte(p.first))
 	return err
 }
 
 func Ex07() {
-	p := person{
+	p := person1{
 		"Karel",
 	}
 

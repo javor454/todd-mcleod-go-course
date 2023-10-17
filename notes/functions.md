@@ -18,6 +18,7 @@
 
 # Defer
 - odlož provolání funkce dokud funkce, v jejímž scopu se volání nachází neskončí (jakkoliv - return, došlo na konec, panic..)
+- LIFO
 
 # Metody
 - pomocí receiveru přidám typu chování formou funkce - metody
@@ -56,3 +57,6 @@
 
 # Recursion
 - funkce volá sama sebe, dokud nenarazí na base case
+
+# Dokumentace
+- napíšu komentář nad implementaci funkce  

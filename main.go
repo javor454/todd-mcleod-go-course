@@ -1,29 +1,32 @@
 package main
 
 import "go-course/snippets"
-import "go-course/excercises"
+import "go-course/exercises"
 
 func main() {
 	snippets.Starter()
-	excercises.Ex01()
+	exercises.Ex01()
 
 	snippets.Scope()
-	excercises.Ex02()
+	exercises.Ex02()
 
 	snippets.Deps()
-	excercises.Ex03()
-	excercises.Ex04()
+	exercises.Ex03()
+	exercises.Ex04()
 
 	snippets.ControlFlow()
-	excercises.Ex05()
+	exercises.Ex05()
 
 	snippets.DataStructures()
-	excercises.Ex06()
+	exercises.Ex06()
 
 	snippets.Bytes()
-	excercises.Ex07()
+	exercises.Ex07()
 
 	snippets.Functions()
-	excercises.Ex08()
-	excercises.Ex09()
+	exercises.Ex08()
+	exercises.Ex09()
+	exercises.Ex10()
+	exercises.Ex11()
+	exercises.Ex12()
 }
