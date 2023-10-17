@@ -8,4 +8,5 @@ import (
 func Deps() {
 	pup := puppy.BigBarks()
 	fmt.Println(pup)
+	fmt.Println("Deps end ----------") // zbytek
 }

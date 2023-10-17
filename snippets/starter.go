@@ -4,9 +4,10 @@ import "fmt"
 
 // package pouzivat poslednim slovem importu
 
-func add(x, y int) int { // oba argumenty maji typ int
-	return x + y
-}
+// func add(x, y int) int { // oba argumenty maji typ int
+//
+//		return x + y
+//	}
 func add2(x bool, y int) {
 	fmt.Printf("hodnota %v ma typ %T, hodnota %v ma typ %T\n", x, x, y, y)
 }
@@ -89,7 +90,6 @@ func Starter() {
 	uuu := uint(fff)
 	fmt.Println(uuu)
 
-	// TODO: 005 Hands-on exercise #6 - go tour step 14 - 15
 	const Pi = 3.14
 	fmt.Println("Happy", Pi, "Day", Borec)
 

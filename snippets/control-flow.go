@@ -61,7 +61,8 @@ func ControlFlow() {
 	selectStatement()
 	forCykly()
 
-	fmt.Println(83 % 40) // zbytek
+	fmt.Println(83 % 40)                      // zbytek
+	fmt.Println("ControlFlow end ----------") // zbytek
 }
 
 func selectStatement() {

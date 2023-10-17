@@ -17,4 +17,5 @@ func Scope() {
 	}
 
 	// fmt.Println(y) // error
+	fmt.Println("Scope end ----------") // zbytek
 }
