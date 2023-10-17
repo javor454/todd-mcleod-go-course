@@ -32,5 +32,5 @@ func Bytes() {
 	b.Write([]byte(" zapsano jako pole bytu"))
 	fmt.Println(b.String())
 
-	fmt.Println("snippets bytes END------------")
+	fmt.Println("bytes END------------")
 }

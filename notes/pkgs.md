@@ -18,3 +18,6 @@
   - Reset - resetne do původního stavu
 - NewBuffer - vytvoří nový bytes.Buffer
 - NewBufferString - vytvoří nový bytes.Buffer ze stringu
+
+# json
+- TODO

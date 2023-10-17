@@ -29,4 +29,6 @@ func main() {
 	exercises.Ex10()
 	exercises.Ex11()
 	exercises.Ex12()
+
+	snippets.Pointers()
 }
