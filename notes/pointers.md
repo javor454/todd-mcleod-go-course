@@ -27,4 +27,35 @@
     - metody které updatují stav structu
     - KONZISTENCE - pokud má typ metodu s pointer semantikou, vsechny metody by meli mít metody s pointer semantikou
 
-TODO 21 - Pointers: 007 Pointers, values, the stack & the heap
+# Stack (zásobník) & Heap (halda)
+- při použití pointer sémantiky je velká pravděpodobnost, že hodnoty escapnou na heap
+
+## Value semantika a zásobník
+- pokud fce přijme hodnotu (ne pointer) získá vlastní kopii té hodnoty
+- tato kopie je typicky umístěna na stack, který je rychlý a nevyžaduje garbage collecting
+- ve chvíli, kdy funkce vrátí, tak se paměť instantně uvolní
+
+## Pointer semantika a halda
+- pokud funkce získá nebo vrací pointer na lokální proměnnou, indikuje kompilátoru že tato hodnota se bude:
+  - sdílet přes více gorutin
+  - bude persistovat po návratu funkcí
+- aby se data uchovala, kompilátor pro ně musí alokovat místo na haldě
+- alokace paměti na haldě je náročnější a vyžaduje garbace collection
+
+## Escape analýza
+- určuje zda má být proměnná alokovaná v zásobníku nebo haldě
+- zanalyzuje fci zda pointer na proměnnou se vrací nebo zda je proměnná uvnitř closure
+  - pokud ano, proměnná půjde na haldu
+  - pokud ne, proměnná půjde do zásobníku
+- verbose escape analýza `go run -gcflags '-m' main.go`
+  - vypíše informace
+    ```
+        ./main2.go:10:6: can inline functionA
+        ./main2.go:11:13: inlining call to fmt.Println
+        ./main2.go:7:7: inlining call to functionA
+        ./main2.go:7:7: inlining call to fmt.Println
+        ./main2.go:6:2: moved to heap: a
+        ./main2.go:7:7: ... argument does not escape
+        ./main2.go:10:12: leaking param: a
+        ./main2.go:11:13: ... argument does not escape
+    ```

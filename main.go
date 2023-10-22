@@ -31,4 +31,12 @@ func main() {
 	exercises.Ex12()
 
 	snippets.Pointers()
+	exercises.Ex13()
+
+	snippets.Json()
+	snippets.Sort()
+	snippets.Bcrypt()
+	exercises.Ex14()
+
+	snippets.Concurency()
 }

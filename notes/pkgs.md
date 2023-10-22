@@ -5,7 +5,7 @@
 - Stringer interface - implementuje vse co ma metodu string ktera vypise obsah
 
 # IO
-- Writer TODO
+- Writer / Reader
 
 # OS
 - Create - vytvori file, vrati pointer
@@ -20,4 +20,25 @@
 - NewBufferString - vytvoří nový bytes.Buffer ze stringu
 
 # json
-- TODO
+- Marshal - encode do jsonu
+- Unmarshal - decode z jsonu
+- Encode / Decode
+
+# sort
+- řazení
+- Ints -> slices.Sort
+- Strings -> slices.Sort
+
+# slices
+- metody nad slicy
+- slices.Sort - serazeni slicu vzestupne (od nejmensiho po nejvetsi)
+- slices.SortStableFunc - serazeni vzestupne pomoci clusury, ve ktere provolam compare
+
+# x
+- experimentalni pkg
+
+# runtime
+- GOOS - os info
+- GOARCH - architektura CPU
+- NumCPU - pocet jader
+- NumGoroutine - pocet gorutin

@@ -18,5 +18,5 @@ func Function() {
 
 func Ex12() {
 	TimedFunction(Function)
-	fmt.Println("Exercise 11 END------------")
+	fmt.Println("Exercise 12 END------------")
 }
