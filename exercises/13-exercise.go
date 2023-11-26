@@ -64,7 +64,7 @@ func Ex13() {
 	d1 := dog{"henry"}
 	d1.walk()
 	d1.run()
-	//youngRun(d1)
+	youngRun(d1)
 
 	d2 := &dog{"padget"}
 	d2.walk()

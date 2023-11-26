@@ -31,6 +31,13 @@
   - nevrati hodnoty v zadnem poradi
 
 # Gorutina
+- funkce bežící konkurentné s dalšími gorutinami ve stejném adresovém prostoru
+- kdyz je vytvořena, má svůj segment paměti v zásobníku, paměť v haldě je sdílena mezi všemi gorutinami
+- jsou multiplexovány (převedeny na vstup) několika vláken operačního systému a v případě, že je jedno zablokování (např. kvůli blokaci čekáním na I/O) jiné pokračují v běhu
+- klíčové slovo `go` spustí volání funkce nebo metody ve stejném adresovém prostoru
+- program nečeká na dokončení gorutiny
+  - pokud program skončí, všechny gorutiny se ukončí
+  - pokud má gorutina návratovou hodnotu, při dokončení 
 - neni vlakno
 
 # WaitGroup
@@ -41,6 +48,7 @@
 
 # Kanaly
 - slouzi pro kumunikaci a synchronizaci mezi gorutinami
+- poslani a prijmuti pres kanal se musi stat ve stejnou chvili -> kanaly jsou blokujici
 
 ## Unbuffered kanal
 - ma kapacitu 0
@@ -56,4 +64,16 @@
   - chci decouplovat synchronizaci mezi nimi
 - umozni gorutine poslat vice hodnot bez potreby okamzite synchronizace
 
+# Race condition
+- v případě že dvě nebo více gorutin konkurentné přistoupí ke sdílené proměnné a alespoň jeden z přístupů je zápis
+- vede k neočekávanému chování programu jako crash nebo korupce paměti
+- možné odhalit pomocí `go run -race main.go`
+
+# Synchronizační primitivy
+
+## Mutex
+- slouží k uzamčení kódu, kód mezi zamčením a odemčením může spustit pouze jedna gorutina
+
+## RWMutex
+- umoznuje uzamknout pro cteni a psani zaroven
 

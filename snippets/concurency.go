@@ -38,7 +38,7 @@ func unbufferedChannel() {
 	ch := make(chan int)
 	go func() {
 		time.Sleep(time.Second) // simulace prace
-		ch <- 5                 // poslu kanalu hodnotu
+		ch <- 5                 // poslu kanalu hodnotu v gorutine abych neblokoval hlavni gorutinu
 	}()
 	x := <-ch // hlavni gorutina zde blokuje a ceka na hodnotu z kanalu
 	fmt.Println(x)
@@ -46,7 +46,7 @@ func unbufferedChannel() {
 
 func bufferedChannel() {
 	ch := make(chan int, 2) // kapacita 2
-	ch <- 1
+	ch <- 1                 // nemusi byt v nove gorutine kvuli bufferu 2
 	ch <- 2
 
 	fmt.Println(<-ch) // 1 - dostavam hodnoty v poradi ve kterem jsem je poslal
