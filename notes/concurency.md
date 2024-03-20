@@ -49,6 +49,9 @@
 # Kanaly
 - slouzi pro kumunikaci a synchronizaci mezi gorutinami
 - poslani a prijmuti pres kanal se musi stat ve stejnou chvili -> kanaly jsou blokujici
+- mohou mit směr
+  - pouze přijímat signály
+  - konzumovat signály
 
 ## Unbuffered kanal
 - ma kapacitu 0
@@ -68,6 +71,14 @@
 - v případě že dvě nebo více gorutin konkurentné přistoupí ke sdílené proměnné a alespoň jeden z přístupů je zápis
 - vede k neočekávanému chování programu jako crash nebo korupce paměti
 - možné odhalit pomocí `go run -race main.go`
+
+## Range channel
+- range přijímá hodnoty poslané kanálem, dokud se kanál neuzavře pomocí `close(ch)`
+- pokud se kanál neuzavře, je blokující
+
+## Select channel
+- blokuje dokud jeden z casu nemůže proběhnout, pak ho spustí
+- používá se k přijímání hodnot poslané několika kanály
 
 # Synchronizační primitivy
 
